@@ -239,9 +239,9 @@ public class SignUp extends javax.swing.JFrame {
     String name = jTextField1.getText();
     String email = jTextField2.getText();
     String gender = getSelectedGender();
-    String password = jTextArea1.getText();
+    String password = jTextField5.getText();
     String phoneNumber = jTextField4.getText();
-    String address = jTextField5.getText();
+    String address = jTextArea1.getText();
     // Retrieve Date of Birth from JDateChooser
     Date dateOfBirthDate = jDateChooser1.getDate();
 
