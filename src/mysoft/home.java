@@ -94,6 +94,8 @@ addPlaceholders();
         Accessories_error.setVisible(false);
         CustomName_Error.setVisible(false);
         ToySize_Error.setVisible(false);
+        Quantity_Error.setVisible(false);
+        
     }
 
   private boolean validateInput() {
@@ -120,7 +122,7 @@ if (jComboBox2.getSelectedIndex() <= 0) {
     // Your existing code for validation
 
     // Validate Accessories
-    if (jComboBox3.getSelectedIndex() == -1) {
+    if (jComboBox3.getSelectedIndex() <= 0) {
         Accessories_error.setText("Please select Accessories");
         isValid = false;
     } else {
@@ -168,10 +170,11 @@ if (jTextField2.getText().trim().isEmpty()) {
     }
      Toy_typeError.setVisible(!isValid);
     Fabric_error.setVisible(!isValid);
-    Colour_Error.setVisible(!isValid);
+    Colour_Error.setVisible(false);
     Accessories_error.setVisible(!isValid);
     CustomName_Error.setVisible(!isValid);
     ToySize_Error.setVisible(!isValid);
+     Quantity_Error.setVisible(!isValid);
   if (isValid) {
         calculateTotalCost();
     }
@@ -256,6 +259,8 @@ private double getToySizeCost(double toySize) {
         jLabel4 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        tab6 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
         already = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -298,18 +303,19 @@ private double getToySizeCost(double toySize) {
         jCheckBox1.setText("jCheckBox1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 600));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 500));
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 0));
 
+        tab1.setBackground(new java.awt.Color(255, 204, 204));
         tab1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab1MouseClicked(evt);
             }
         });
 
+        jLabel1.setForeground(new java.awt.Color(102, 0, 0));
         jLabel1.setText("Home");
 
         javax.swing.GroupLayout tab1Layout = new javax.swing.GroupLayout(tab1);
@@ -329,12 +335,14 @@ private double getToySizeCost(double toySize) {
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
+        tab3.setBackground(new java.awt.Color(255, 204, 204));
         tab3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab3MouseClicked(evt);
             }
         });
 
+        jLabel2.setForeground(new java.awt.Color(102, 0, 0));
         jLabel2.setText("orders");
 
         javax.swing.GroupLayout tab3Layout = new javax.swing.GroupLayout(tab3);
@@ -354,6 +362,9 @@ private double getToySizeCost(double toySize) {
                 .addContainerGap())
         );
 
+        tab4.setBackground(new java.awt.Color(255, 204, 204));
+
+        jLabel3.setForeground(new java.awt.Color(102, 0, 0));
         jLabel3.setText("Account");
 
         javax.swing.GroupLayout tab4Layout = new javax.swing.GroupLayout(tab4);
@@ -373,22 +384,24 @@ private double getToySizeCost(double toySize) {
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
+        tab5.setBackground(new java.awt.Color(255, 204, 204));
         tab5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab5MouseClicked(evt);
             }
         });
 
-        jLabel4.setText("About Us");
+        jLabel4.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel4.setText("Order History Report");
 
         javax.swing.GroupLayout tab5Layout = new javax.swing.GroupLayout(tab5);
         tab5.setLayout(tab5Layout);
         tab5Layout.setHorizontalGroup(
             tab5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab5Layout.createSequentialGroup()
-                .addGap(91, 91, 91)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(56, 56, 56))
         );
         tab5Layout.setVerticalGroup(
             tab5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,6 +424,33 @@ private double getToySizeCost(double toySize) {
         jLabel17.setForeground(new java.awt.Color(255, 204, 204));
         jLabel17.setText("PLUSHIES");
 
+        tab6.setBackground(new java.awt.Color(255, 204, 204));
+        tab6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tab6MouseClicked(evt);
+            }
+        });
+
+        jLabel24.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel24.setText("Log Out");
+
+        javax.swing.GroupLayout tab6Layout = new javax.swing.GroupLayout(tab6);
+        tab6.setLayout(tab6Layout);
+        tab6Layout.setHorizontalGroup(
+            tab6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tab6Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jLabel24)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        tab6Layout.setVerticalGroup(
+            tab6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tab6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel24)
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -423,7 +463,8 @@ private double getToySizeCost(double toySize) {
                             .addComponent(tab5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tab4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tab3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tab1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(tab1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tab6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -447,13 +488,16 @@ private double getToySizeCost(double toySize) {
                 .addComponent(tab4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tab5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tab6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        already.setBackground(new java.awt.Color(204, 204, 255));
+        already.setBackground(new java.awt.Color(255, 204, 204));
         already.setPreferredSize(new java.awt.Dimension(814, 561));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 0, 0));
         jLabel5.setText("Welcome To Plushies");
 
         jButton1.setIcon(new javax.swing.ImageIcon("D:\\C#\\img1.png (1).jpg")); // NOI18N
@@ -471,39 +515,43 @@ private double getToySizeCost(double toySize) {
             }
         });
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel6.setText("Readymade Soft Toys");
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel7.setText("Customize Soft Toys");
 
         javax.swing.GroupLayout alreadyLayout = new javax.swing.GroupLayout(already);
         already.setLayout(alreadyLayout);
         alreadyLayout.setHorizontalGroup(
             alreadyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(alreadyLayout.createSequentialGroup()
-                .addGap(186, 186, 186)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addGroup(alreadyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(alreadyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(63, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alreadyLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(alreadyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(alreadyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59))
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(122, 122, 122))
         );
         alreadyLayout.setVerticalGroup(
             alreadyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(alreadyLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(56, 56, 56)
                 .addGroup(alreadyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(52, 52, 52)
+                .addGap(38, 38, 38)
                 .addGroup(alreadyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -511,6 +559,7 @@ private double getToySizeCost(double toySize) {
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel3.setAlignmentX(60.0F);
         jPanel3.setMaximumSize(new java.awt.Dimension(900, 600));
         jPanel3.setPreferredSize(new java.awt.Dimension(814, 561));
 
@@ -563,6 +612,8 @@ private double getToySizeCost(double toySize) {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(102, 0, 0));
+        jButton3.setForeground(new java.awt.Color(255, 204, 204));
         jButton3.setText("Order");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -777,9 +828,9 @@ private double getToySizeCost(double toySize) {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(already, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE))
+                .addComponent(already, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -991,6 +1042,10 @@ catch (SQLException e) {
     
     }//GEN-LAST:event_tab5MouseClicked
 
+    private void tab6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tab6MouseClicked
+
     private Color getContrastColor(Color color) {
     // Calculate the contrast color to make text visible
     int y = (299 * color.getRed() + 587 * color.getGreen() + 114 * color.getBlue()) / 1000;
@@ -1078,6 +1133,7 @@ catch (SQLException e) {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1096,6 +1152,7 @@ catch (SQLException e) {
     private javax.swing.JPanel tab3;
     private javax.swing.JPanel tab4;
     private javax.swing.JPanel tab5;
+    private javax.swing.JPanel tab6;
     // End of variables declaration//GEN-END:variables
 
    
